@@ -1,27 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UI.Context;
+﻿using Architecture.Core.UI.BndSystem.Properties;
+using Context;
 using UnityEngine;
 
-namespace Assets.Context
+namespace Demo
 {
 	class DemoContext : BaseContext
 	{
-		public float CurrentTime { get; set; }
-		public float MinTime { get; private set; }
-		public float MaxTime { get; private set; }
+		public FloatProperty CurrentTime = new FloatProperty();
+		public FloatProperty MinTime = new FloatProperty();
+		public FloatProperty MaxTime = new FloatProperty();
 
 		private void Awake()
 		{
-			MinTime = 0;
-			MaxTime = 20f;
+			MinTime.Value = 0;
+			MaxTime.Value = 20f;
 		}
 
 		private void Update()
 		{
-			CurrentTime += Time.deltaTime;
+			CurrentTime.Value += Time.deltaTime;
 		}
 	}
 }

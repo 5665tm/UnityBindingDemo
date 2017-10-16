@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Architecture.Core.UI.BndSystem.Components.Base;
 using UnityEngine;
 
-namespace UI.Context
+namespace Context
 {
-	public abstract class BaseContext : MonoBehaviour
+	public abstract class BaseContext : MonoBehaviour, IBndTarget
 	{
+		public string GetName()
+		{
+			return gameObject.name;
+		}
 	}
 }
